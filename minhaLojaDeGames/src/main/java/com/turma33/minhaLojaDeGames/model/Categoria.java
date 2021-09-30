@@ -29,14 +29,14 @@ public class Categoria {
 	private String titulo;//nome do jogo
 	
 	@NotNull
-	@Size(min = 5, max = 2048)
+	@Size(min = 5, max = 255)
 	private String descricao;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataLancamento = new java.sql.Date(System.currentTimeMillis());
 	
 	@ManyToOne
-	@JoinColumn(name = "produto")
+	@JoinColumn(name = "categoria")
 	private Produto produto;
 
 	public Long getId() {
